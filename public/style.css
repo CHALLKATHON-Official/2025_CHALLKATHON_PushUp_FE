@@ -20,6 +20,16 @@ body {
   margin-bottom: 10px;
 }
 
+.speaker {
+     font-weight: bold; 
+     color: #555; 
+     margin-bottom: 5px; 
+}
+
+.text { 
+    margin-left: 10px;
+}
+
 .choices button {
   display: block;
   width: 100%;

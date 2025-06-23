@@ -10,6 +10,7 @@ app.use(express.static("public"));
 
 const storyData = {
   start: {
+    speaker: "user",
     message: "안녕, 오랜만이야.",
     choices: [
       { text: "누구세요?", next: "scene1" },

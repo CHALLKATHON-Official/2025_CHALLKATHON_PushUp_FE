@@ -11,7 +11,17 @@ async function showScene(id) {
   // 메시지 출력
   const msgElem = document.createElement("div");
   msgElem.className = "message";
-  msgElem.innerText = scene.message;
+
+  const speakerElem = document.createElement("div");
+  speakerElem.className = "speaker";
+  speakerElem.innerText = scene.speaker || "??";
+
+  const textElem = document.createElement("div");
+  textElem.className = "text";
+  textElem.innerText = scene.message;
+
+  msgElem.appendChild(speakerElem);
+  msgElem.appendChild(textElem);
   messages.appendChild(msgElem);
 
   // 선택지 초기화
@@ -33,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("intro").style.display = "none";
     document.getElementById("game").style.display = "block";
     showScene("start");
-  }, 3000); // 3초 후 intro 제거, 게임 시작
+  }, 3000); // 3초 후 intro 제거, 게임 시작, fadeout 효과
   showScene(currentId);
 });
 
