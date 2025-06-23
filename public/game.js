@@ -29,6 +29,11 @@ async function showScene(id) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("game").style.display = "block";
+    showScene("start");
+  }, 3000); // 3초 후 intro 제거, 게임 시작
   showScene(currentId);
 });
 
