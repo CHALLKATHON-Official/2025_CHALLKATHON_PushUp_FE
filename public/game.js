@@ -12,16 +12,21 @@ async function showScene(id) {
   const msgElem = document.createElement("div");
   msgElem.className = "message";
 
-  const speakerElem = document.createElement("div");
-  speakerElem.className = "speaker";
-  speakerElem.innerText = scene.speaker || "??";
+  // speaker 표시
+  if (scene.speaker) {
+    const speakerElem = document.createElement("div");
+    speakerElem.className = "speaker";
+    speakerElem.innerText = scene.speaker;
+    msgElem.appendChild(speakerElem);
+  }
 
+  // message 본문
   const textElem = document.createElement("div");
   textElem.className = "text";
   textElem.innerText = scene.message;
-
-  msgElem.appendChild(speakerElem);
   msgElem.appendChild(textElem);
+
+  // 출력
   messages.appendChild(msgElem);
 
   // 선택지 초기화
